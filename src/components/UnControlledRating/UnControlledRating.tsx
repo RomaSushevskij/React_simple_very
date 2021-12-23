@@ -3,7 +3,7 @@ import {RatingValueType} from "../Rating/Rating";
 
 
 
-export function UnControlledRating(props: any) {
+export function UnControlledRating() {
     console.log("Rating rendering");
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
     return (

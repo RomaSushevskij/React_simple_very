@@ -23,11 +23,15 @@ type UnControlledAccordionTitlePropsType = {
 }
 
 export function UnControlledAccordionTitle(props: UnControlledAccordionTitlePropsType) {
-    console.log("AccordionTitle rendering")
-    return (
+    console.log("AccordionTitle rendering");
 
+    const onTitleClick = () => {
+        props.setCollapsedValue()
+    };
+
+    return (
         <>
-            <h3 onClick={() => props.setCollapsedValue()}>{props.title}</h3>
+            <h3 onClick={onTitleClick}>{props.title}</h3>
         </>
 
     )

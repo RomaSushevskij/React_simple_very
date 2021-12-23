@@ -23,8 +23,13 @@ type AccordionTitlePropsType = {
 
 export function AccordionTitle(props: AccordionTitlePropsType) {
     console.log("AccordionTitle rendering");
+
+    const onTitleClick = () => {
+        props.setCollapsedValue()
+    };
+
     return (
-        <h3 onClick={()=> props.setCollapsedValue()}>{props.title}</h3>
+        <h3 onClick={onTitleClick}>{props.title}</h3>
 
     )
 }

@@ -1,11 +1,15 @@
-type OnOffPropsType = {
-    bulbValue: boolean
-    setBulbValue: (bulbValue: boolean) => void
+import {useState} from "react";
+
+type  UnControlledOnOffPropsType = {
+    setBulbValueApp: (bulbValue: boolean) => void
 }
-export const OnOff: React.FC<OnOffPropsType> = ({bulbValue, setBulbValue}) => {
+export const UnControlledOnOff: React.FC<UnControlledOnOffPropsType> = ({setBulbValueApp}) => {
+    const [bulbValue, setBulbValue] = useState<boolean>(true);
     const onChangeBulbValue = (bulbValue: boolean)=> {
-        setBulbValue(bulbValue)
+        setBulbValue(bulbValue);
+        setBulbValueApp(bulbValue)
     };
+
     const wrapper = {
         margin: '20px',
         display: 'flex',
