@@ -1,20 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
 import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 
 function App() {
-    console.log("App rendering")
+    const [collapsedValue, setCollapsedValue] = useState<boolean>(false);
+    const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+
     return (
         <div>
             <PageTitle title={"This is App component"}/>
-            <UnControlledAccordion title={"---Menu---"}/>
+            <Accordion collapsed={collapsedValue}
+                       title={"---Menu 1---"}
+                       setCollapsedValue={() => setCollapsedValue(!collapsedValue)}/>
             Article 1
-            <UnControlledRating />
-            <UnControlledAccordion title={"---Menu---"}/>
+             <Rating value={ratingValue} setRatingValue={setRatingValue}/>
+
+            <UnControlledAccordion title={"---Menu 2---"}/>
             Article 2
             <UnControlledRating />
             <hr/>
@@ -24,10 +29,10 @@ function App() {
 }
 
 type PageTitlePropsType = {
-    title:string
+    title: string
 }
 
-function PageTitle(props:PageTitlePropsType) {
+function PageTitle(props: PageTitlePropsType) {
     console.log("Title rendering")
     return (
         <h1>
