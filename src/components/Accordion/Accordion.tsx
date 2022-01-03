@@ -29,7 +29,7 @@ export function AccordionTitle(props: AccordionTitlePropsType) {
     };
 
     return (
-        <h3 onClick={onTitleClick}>{props.title}</h3>
+        <h3 onClick={(e) => onTitleClick()}>{props.title}</h3>
 
     )
 }

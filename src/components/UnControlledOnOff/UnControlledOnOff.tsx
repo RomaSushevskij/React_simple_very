@@ -5,31 +5,33 @@ type  UnControlledOnOffPropsType = {
 }
 export const UnControlledOnOff: React.FC<UnControlledOnOffPropsType> = ({setBulbValueApp}) => {
     const [bulbValue, setBulbValue] = useState<boolean>(true);
-    const onChangeBulbValue = (bulbValue: boolean)=> {
+    const onChangeBulbValue = (bulbValue: boolean) => {
         setBulbValue(bulbValue);
         setBulbValueApp(bulbValue)
     };
 
+    let commonStyle = {
+        width: '100px',
+        height: '30px',
+        border: '1px solid black',
+        padding: '5px',
+        fontWeight: 'bold',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: 'center'
+    };
     const wrapper = {
         margin: '20px',
         display: 'flex',
         alignItems: 'center'
     };
     let styleOn = {
-        width: '100px',
-        height: '30px',
-        border: '1px solid black',
-        padding: '5px',
-        fontWeight: 'bold',
+        ...commonStyle,
         backgroundColor: bulbValue ? 'lightgreen' : 'transparent'
     };
     let styleOff = {
-        width: '100px',
-        height: '30px',
-        border: '1px solid black',
-        padding: '5px',
+        ...commonStyle,
         marginLeft: '3px',
-        fontWeight: 'bold',
         backgroundColor: !bulbValue ? 'tomato' : 'transparent'
     };
     let styleBulb = {
