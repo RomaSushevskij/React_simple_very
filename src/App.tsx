@@ -24,9 +24,9 @@ function App() {
             <OnOff bulbValue={bulbValue} setBulbValue={setBulbValue}/>
             <UnControlledAccordion title={"---Uncontrolled---"}/>
             Article 2
-            <UnControlledRating/>
+            <UnControlledRating defaultValue={2}/>
             <hr/>
-            <UnControlledOnOff setBulbValueApp={setBulbValue}/>{bulbValue.toString()}
+            <UnControlledOnOff defaultOn={true} setBulbValueApp={setBulbValue}/>{bulbValue.toString()}
         </div>
     );
 }

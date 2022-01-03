@@ -2,9 +2,10 @@ import {useState} from "react";
 
 type  UnControlledOnOffPropsType = {
     setBulbValueApp: (bulbValue: boolean) => void
+    defaultOn?:boolean
 }
-export const UnControlledOnOff: React.FC<UnControlledOnOffPropsType> = ({setBulbValueApp}) => {
-    const [bulbValue, setBulbValue] = useState<boolean>(true);
+export const UnControlledOnOff: React.FC<UnControlledOnOffPropsType> = ({setBulbValueApp,defaultOn, ...restProps}) => {
+    const [bulbValue, setBulbValue] = useState<boolean>(defaultOn ? defaultOn : false);
     const onChangeBulbValue = (bulbValue: boolean) => {
         setBulbValue(bulbValue);
         setBulbValueApp(bulbValue)
@@ -42,7 +43,6 @@ export const UnControlledOnOff: React.FC<UnControlledOnOffPropsType> = ({setBulb
         marginLeft: '10px',
         backgroundColor: bulbValue ? 'lightgreen' : 'tomato'
     };
-    debugger
     return (
         <div style={wrapper}>
             <div onClick={() => onChangeBulbValue(true)} style={styleOn}>On</div>

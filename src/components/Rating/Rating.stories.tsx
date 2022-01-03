@@ -8,7 +8,7 @@ export default {
     component: Rating,
 } as ComponentMeta<typeof Rating>;
 
-const setRatingValue = action('value of rating should be set ');
+const setRatingValue = action('value of rating has been changed ');
 
 const Template: ComponentStory<typeof Rating> = (args) => <Rating {...args} />;
 
