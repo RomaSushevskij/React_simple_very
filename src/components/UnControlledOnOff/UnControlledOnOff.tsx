@@ -1,7 +1,14 @@
 import {useState} from "react";
 
 type  UnControlledOnOffPropsType = {
+    /**
+     * Value that indicates whether on bulb default (true or false)
+     */
+
     setBulbValueApp: (bulbValue: boolean) => void
+     /** Callback that is called when On or Off has been clicked
+     * @param bulbValue
+     */
     defaultOn?:boolean
 }
 export const UnControlledOnOff: React.FC<UnControlledOnOffPropsType> = ({setBulbValueApp,defaultOn, ...restProps}) => {

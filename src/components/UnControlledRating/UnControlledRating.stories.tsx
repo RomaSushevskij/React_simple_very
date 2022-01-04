@@ -48,5 +48,3 @@ UnControlledRating5.args = {
     setRatingValueApp: callback
 };
 
-export const UnControlledRatingChanging = Template.bind({});
-

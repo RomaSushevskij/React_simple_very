@@ -15,7 +15,7 @@ function App() {
     return (
         <div>
             <PageTitle title={"This is App component"}/>
-            <Accordion collapsed={collapsedValue}
+          {/*  <Accordion collapsed={collapsedValue}
                        title={"---Controlled---"}
                        setCollapsedValue={() => setCollapsedValue(!collapsedValue)}/>
             Article 1
@@ -24,9 +24,9 @@ function App() {
             <OnOff bulbValue={bulbValue} setBulbValue={setBulbValue}/>
             <UnControlledAccordion title={"---Uncontrolled---"}/>
             Article 2
-            <UnControlledRating defaultValue={2}/>
+            <UnControlledRating setRatingValueApp={setRatingValue} defaultValue={2}/>
             <hr/>
-            <UnControlledOnOff defaultOn={true} setBulbValueApp={setBulbValue}/>{bulbValue.toString()}
+            <UnControlledOnOff defaultOn={true} setBulbValueApp={setBulbValue}/>{bulbValue.toString()}*/}
         </div>
     );
 }

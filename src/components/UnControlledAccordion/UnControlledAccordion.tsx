@@ -1,6 +1,9 @@
 import React, {useState} from "react";
 
 type UnControlledAccordionPropsType = {
+    /**
+     * Title of accordion
+     */
     title: string
 }
 

@@ -3,9 +3,35 @@ import React, {useState} from "react";
 import {Accordion} from "./Accordion";
 import {action} from "@storybook/addon-actions";
 
+
+const getCategoryObj = (categoryName: 'Colors' | 'Events' | 'Main') => {
+    return ({
+        table: {
+            category: categoryName
+        }
+    })
+};
+
 export default {
     title: 'Accordion',
     component: Accordion,
+    argTypes: {
+        color: {
+            ...getCategoryObj('Colors'),
+            control: 'color',
+            defaultValue: 'black',
+        },
+        setCollapsedValue: {
+            ...getCategoryObj('Events')
+        },
+        collapsed: {
+            ...getCategoryObj('Main'),
+            defaultValue: true
+        },
+        title: {
+            ...getCategoryObj('Main')
+        }
+    },
 } as ComponentMeta<typeof Accordion>;
 
 const callback = action('collapsed value has been changed')
@@ -27,10 +53,10 @@ UncollapsedMode.args = {
     setCollapsedValue: callback
 };
 
-export const ModeChanging:ComponentStory<typeof Accordion> = (args) => {
+export const ModeChanging: ComponentStory<typeof Accordion> = (args) => {
     const [value, setValue] = useState<boolean>(false);
 
-    return <Accordion {...args} collapsed={value} setCollapsedValue= {() => setValue(!value)}/>
+    return <Accordion {...args} collapsed={value} setCollapsedValue={() => setValue(!value)}/>
 };
 ModeChanging.args = {
     title: 'Citizens'

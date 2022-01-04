@@ -3,7 +3,14 @@ import React from "react";
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
 
 export type RatingPropsType = {
+    /**
+     * Value that indicate value of Rating
+     */
     value: RatingValueType
+    /**
+     * Callback that is called when some Star has been clicked
+     * @param ratingValue
+     */
     setRatingValue: (ratingValue: RatingValueType) => void
 }
 

@@ -1,5 +1,12 @@
 type OnOffPropsType = {
+    /**
+     * Value that indicates whether on bulb (true or false)
+     */
     bulbValue: boolean
+    /**
+     * Callback that is called when On or Off has been clicked
+     * @param bulbValue
+     */
     setBulbValue: (bulbValue: boolean) => void
 }
 export const OnOff: React.FC<OnOffPropsType> = ({bulbValue, setBulbValue}) => {

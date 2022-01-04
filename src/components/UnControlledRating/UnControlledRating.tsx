@@ -3,7 +3,14 @@ import React, {useState} from "react";
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
 
 type UnControlledRatingPropsType = {
+    /**
+     * Value that indicate default value of Rating
+     */
     defaultValue?: RatingValueType
+    /**
+     * Callback that is called when some Star has been clicked
+     * @param ratingValue
+     */
     setRatingValueApp: (ratingValue: RatingValueType) => void
 }
 
