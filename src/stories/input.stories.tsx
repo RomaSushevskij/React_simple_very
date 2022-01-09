@@ -1,5 +1,4 @@
 import React, {ChangeEvent, MouseEvent, useRef, useState} from "react";
-import {action} from "@storybook/addon-actions";
 
 export default {
     title: 'Input',
@@ -48,22 +47,22 @@ export const GetValueOfUncontrolledInputByButtonPress = () => {
 
 export const ControlledInput = () => {
     const [parentValue, setParentValue] = useState('');
-    const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) => {
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setParentValue(e.currentTarget.value)
     };
     return (
 
-            <input value={parentValue} onChange={onChangeHandler}/>
+        <input value={parentValue} onChange={onChangeHandler}/>
 
     )
 };
 export const ControlledCheckbox = () => {
     const [parentChecked, setParentChecked] = useState(true);
-    const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) => {
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setParentChecked(e.currentTarget.checked)
     };
     return (
-            <input type="checkbox" checked={parentChecked} onChange={onChangeHandler}/>
+        <input type="checkbox" checked={parentChecked} onChange={onChangeHandler}/>
     )
 };
 export const ControlledSellect = () => {
@@ -71,16 +70,16 @@ export const ControlledSellect = () => {
     //onChange вешаем на select, поэтому e.currentTarget - select и мы у него берем value. Если option изменилась, то значение select будет равно значению той option, которая выбрана.
 
     const [parentValue, setParentValue] = useState<string | undefined>("3");
-    const onChangeHandler = (e:ChangeEvent<HTMLSelectElement>) => {
+    const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
         setParentValue(e.currentTarget.value)
     };
     return (
-            <select  value={parentValue} onChange={onChangeHandler}>
-                <option value="1">HTML</option>
-                <option value="2">CSS</option>
-                <option value="3">JS</option>
-                <option value="4">React</option>
-                <option value="5">Redux</option>
-            </select>
+        <select value={parentValue} onChange={onChangeHandler}>
+            <option value="1">HTML</option>
+            <option value="2">CSS</option>
+            <option value="3">JS</option>
+            <option value="4">React</option>
+            <option value="5">Redux</option>
+        </select>
     )
 };

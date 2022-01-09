@@ -30,11 +30,25 @@ export default {
         },
         title: {
             ...getCategoryObj('Main')
+        },
+        items: {
+            ...getCategoryObj('Main')
         }
     },
 } as ComponentMeta<typeof Accordion>;
 
-const callback = action('collapsed value has been changed')
+const Items = [
+    {title: 'HTML', value: 1},
+    {title: 'CSS', value: 2},
+    {title: 'JS', value: 3},
+    {title: 'React', value: 4},
+    {title: 'Redux', value: 5},
+];
+
+const callback = action('collapsed value has been changed');
+const onClickCallback = (value:string) => {
+    alert(`Item with value ${value} was clicked`)
+};
 
 const Template: ComponentStory<typeof Accordion> = (args) => <Accordion {...args} />;
 
@@ -43,14 +57,18 @@ export const CollapsedMode = Template.bind({});
 CollapsedMode.args = {
     title: 'Menu',
     collapsed: true,
-    setCollapsedValue: callback
+    items: Items,
+    setCollapsedValue: callback,
+    onClick: onClickCallback
 };
 
 export const UncollapsedMode = Template.bind({});
 UncollapsedMode.args = {
     title: 'Menu',
     collapsed: false,
-    setCollapsedValue: callback
+    items: Items,
+    setCollapsedValue: callback,
+    onClick: onClickCallback
 };
 
 export const ModeChanging: ComponentStory<typeof Accordion> = (args) => {
@@ -59,7 +77,9 @@ export const ModeChanging: ComponentStory<typeof Accordion> = (args) => {
     return <Accordion {...args} collapsed={value} setCollapsedValue={() => setValue(!value)}/>
 };
 ModeChanging.args = {
-    title: 'Citizens'
+    title: 'Technologies',
+    items: Items,
+    onClick: onClickCallback
 };
 
 
