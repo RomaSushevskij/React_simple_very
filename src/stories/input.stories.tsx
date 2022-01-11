@@ -67,7 +67,7 @@ export const ControlledCheckbox = () => {
 };
 export const ControlledSellect = () => {
 
-    //onChange вешаем на select, поэтому e.currentTarget - select и мы у него берем value. Если option изменилась, то значение select будет равно значению той option, которая выбрана.
+    //onChange вешаем на select, поэтому e.currentTarget - это select и мы у него берем value. Если option изменилась, то значение select будет равно значению той option, которая выбрана.
 
     const [parentValue, setParentValue] = useState<string | undefined>("3");
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {

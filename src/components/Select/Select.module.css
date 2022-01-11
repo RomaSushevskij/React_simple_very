@@ -1,0 +1,117 @@
+
+.selectWrapper {
+    width: 200px;
+    position: relative;
+}
+
+.selectValue:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #C4C4C4;
+    right: 10px;
+    top: 40%;
+    transform: rotate(45deg);
+    background-image: linear-gradient(to bottom right, #ffffff 50%, transparent 50%);
+    transition: .2s ease;
+}
+
+.selectValue.active:after {
+    background-image: linear-gradient(to bottom right, #878787 50%, #ffffff 50%);
+    top: 50%;
+    transition: .2s ease;
+}
+
+.selectValueWrapper {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4375em;
+    letter-spacing: 0.00938em;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    cursor: text;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+    border: 2px solid #C4C4C4;
+    width: 100%;
+    transition: .4s ease;
+    position: relative;
+}
+
+.selectValueWrapper.active {
+    border-color: #878787;
+}
+
+.selectValueWrapper:hover {
+    border-color: #878787;
+    transition: .4s ease;
+}
+
+
+.selectValue {
+    min-height: 1.4375em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    user-select: none;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: inherit;
+    border: 0;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0;
+    display: block;
+    width: 100%;
+    padding: 16.5px 14px;
+}
+
+.itemsBlockWrapper {
+    background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.87);
+    border-radius: 4px;
+    outline: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    max-height: 200px;
+    width: 100%;
+    position: absolute;
+    margin-top: 5px;
+}
+
+.itemsBlock {
+    margin: 0px;
+    position: relative;
+    outline: 0px;
+}
+
+.item {
+    outline: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    color: inherit;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 48px;
+    padding: 6px 16px;
+    box-sizing: border-box;
+    hyphens: auto;
+    word-break: break-word;
+}
+
+.item.hoveredItem {
+    background-color: #dceaf9;
+}
