@@ -74,7 +74,7 @@ export const Select: React.FC<SelectPropsType> = (props) => {
              className={style.selectWrapper}
              onBlur={onBlurSelect}
              onKeyUp={onKeyUpSelect}>
-            <div className={collapsed ? style.selectValueWrapper : `${style.selectValueWrapper} ${style.active}`}>
+            <div tabIndex={0} className={collapsed ? style.selectValueWrapper : `${style.selectValueWrapper} ${style.active}`}>
                 <div onClick={onCollapsedSelect}
                      className={collapsed ? style.selectValue : `${style.selectValue} ${style.active}`}>
                     {selectedItem && selectedItem.title}
