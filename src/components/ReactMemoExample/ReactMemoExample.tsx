@@ -24,21 +24,21 @@ type CounterPropsType = {
     counter: number
 }
 
-export const NewMessageCounter = (props: CounterPropsType) => {
+export const NewMessageCounter = React.memo((props: CounterPropsType) => {
     console.log('CounterRender')
     return (
         <div>
             <h3>{props.counter}</h3>
         </div>
     )
-}
+})
 
 
 type UsersPropsType = {
     users: string[]
 }
 
-const Users = React.memo((props: UsersPropsType) => {
+export const Users = React.memo((props: UsersPropsType) => {
     console.log('UsersRender')
     return (
         <div>
