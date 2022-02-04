@@ -15,7 +15,7 @@ export const UsersWithMemo:ComponentStory<typeof ReactMemoExample> = (args) => {
     const [counter, setCounter] = useState(0);
     const [users, setUsers] = useState(['Roma', 'Lena', 'Ameliya', 'Mira'])
 
-    return <ReactMemoExample counter={counter} users={users}/>
+    return <ReactMemoExample setCounter={setCounter} counter={counter} users={users}/>
 };
 
 

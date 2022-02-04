@@ -1,13 +1,15 @@
 import React, {useState} from "react";
 
+//React.memo - HOC - принимает компоненту и возвращает эту компоненту, которая обернута контейнерной компонентой. Эта контейнерная компонента реализует процесс мемоизации: если входные пропсы для компоненты не изменились, то и нет смысла вызывать эту компоненту, т.к. другую разметку/ркзультат она не вернет; но если входные пропсы отличаются от предыдущих -> есть смысл вызвать эту компоненту заново, т.к. вернется др.рузультат/разметка.
+
+
 export type ReactMemoExampleType = {
     counter: number
     users: string []
+    setCounter:(counter: number)=> void
 }
 
-export const ReactMemoExample = (props:ReactMemoExampleType) => {
-    const [counter, setCounter] = useState(0);
-    const [users, setUsers] = useState(['Roma', 'Lena', 'Ameliya', 'Mira'])
+export const ReactMemoExample = ({counter, users, setCounter}:ReactMemoExampleType) => {
     return (
         <div>
             <button onClick={() => setCounter(counter + 1)}>INC</button>
@@ -22,7 +24,7 @@ type CounterPropsType = {
     counter: number
 }
 
-const NewMessageCounter = (props: CounterPropsType) => {
+export const NewMessageCounter = (props: CounterPropsType) => {
     console.log('CounterRender')
     return (
         <div>
