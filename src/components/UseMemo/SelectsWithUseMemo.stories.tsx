@@ -16,7 +16,7 @@ const cities = [
     {id: '6', title: 'Moskva', country: 'Russia', citizens: 12000000}
 ];
 
-export const SelectsWithUseMemoExample: ComponentStory<typeof SelectUseMemo> = (args) => {
+export const SelectsWithUseMemoExample: ComponentStory<typeof SelectsWithUseMemo> = (args) => {
     const [counter, setCounter] = useState(0);
     const [id_1, setId_1] = useState('1');
     const [id_2, setId_2] = useState('2');
@@ -35,8 +35,6 @@ export const SelectsWithUseMemoExample: ComponentStory<typeof SelectUseMemo> = (
                        setCounter={setCounter}/>
     )
 }
-
-
 SelectsWithUseMemoExample.args = {
     items:cities
 }
