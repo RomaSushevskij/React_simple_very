@@ -1,4 +1,3 @@
-import {Counter} from "../smartUseState/smartUseState";
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {CounterWithUseEffect} from "./useEffectBasics";
 import React from "react";
