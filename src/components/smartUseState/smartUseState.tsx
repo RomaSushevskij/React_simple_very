@@ -10,14 +10,15 @@ const difficultCounting = () => {
 }
 
 export const Counter = (props: any) => {
-    // каждый раз при вызове компоненту будет вызываться функция со сложными вычислениями
+    // каждый раз при вызове компоненты будет вызываться функция со сложными вычислениями difficultCounting
     //const initState = difficultCounting()
 
     // можно использ. useMemo или useCallback
     //const initState = useCallback(difficultCounting, [])
 
-    //const [counter, setCounter] = useState(initState)
+
     //а можно сразу передать difficultCounting как callback в useState и он сам опитимизирует работу с ним
+    //const [counter, setCounter] = useState(initState)
     const [counter, setCounter] = useState(difficultCounting)
 
     //в setCounter вместо конкретного значения можно передавать как callback функцию, которая изменяет state каждый раз по определенному фиксированному правилу и возвращает измененный state, например для этого случая:
