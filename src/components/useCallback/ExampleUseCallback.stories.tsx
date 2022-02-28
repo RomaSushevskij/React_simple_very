@@ -1,7 +1,5 @@
-import {SelectsWithUseMemo} from "../UseMemo/SelectsWithUseMemo";
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {BooksWithCounter} from "./ExampleUseCallback";
-import {UnControlledAccordion} from "../UnControlledAccordion/UnControlledAccordion";
 import React, {useState} from "react";
 
 export default {
