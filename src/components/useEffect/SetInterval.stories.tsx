@@ -1,6 +1,6 @@
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 import React from "react";
-import {SetInterval} from "./setInterval";
+import {SetInterval} from "./SetInterval";
 
 export default {
     title: 'useEffect',

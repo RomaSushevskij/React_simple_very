@@ -1,6 +1,7 @@
 import {ComponentMeta, ComponentStory} from "@storybook/react";
-import {CounterWithUseEffect} from "./useEffectBasics";
+
 import React from "react";
+import {CounterWithUseEffect} from './UseEffectBasics'
 
 export default {
     title: 'useEffect',
